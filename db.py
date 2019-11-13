@@ -8,7 +8,7 @@ class Database:
         self.conn.commit()
 
     def fetch(self):
-        self.conn.execute("SELECT * FROM parts")
+        self.cur.execute("SELECT * FROM parts")
         rows = self.cur.fetchall()
         return rows
 
