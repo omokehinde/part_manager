@@ -43,7 +43,8 @@ def remove_item():
     populate_list()
 
 def update_item():
-    print('Update')
+    db.update(selected_item[0], part_text.get(), customer_text.get(), retailer_text.get(), price_text.get())
+    populate_list()
 
 def clear_text():
     part_entry.delete(0, END)
@@ -109,3 +110,7 @@ populate_list()
 
 # start program 
 app.mainloop()
+
+
+
+# to create an executeable run: pyinstaller part_manager.py --onefile --windowed 
