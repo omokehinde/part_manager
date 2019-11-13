@@ -1,5 +1,20 @@
 from tkinter import *
 
+def populate_list():
+    print('Populate')
+
+def add_item():
+    print('Add')
+
+def remove_item():
+    print('Remove')
+
+def update_item():
+    print('Update')
+
+def clear_text():
+    print('Clear')
+
 # create a window object 
 app = Tk()
 
@@ -36,9 +51,23 @@ scrollbar.grid(row=3, column=3)
 # set scroll to list box
 parts_list.configure(yscrollcommand=scrollbar.set)
 scrollbar.configure(command=parts_list.yview)
+# buttons
+add_btn = Button(app, text='Add Part', width=12, command=add_item)
+add_btn.grid(row=2, column=0, pady=20)
+
+remove_btn = Button(app, text='Remove Part', width=12, command=remove_item)
+remove_btn.grid(row=2, column=1)
+
+update_btn = Button(app, text='Update Part', width=12, command=update_item)
+update_btn.grid(row=2, column=2)
+
+clear_btn = Button(app, text='Clear Input', width=12, command=clear_text)
+clear_btn.grid(row=2, column=3)
 
 app.title('Part Manager')
 app.geometry('650x325')
+# Populate data
+populate_list()
 
 # start program 
 app.mainloop()
